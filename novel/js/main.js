@@ -46,7 +46,7 @@ function getNovel(novelId, novelCh) {
         if (xhr.status == 200 && xhr.responseText.trim() != "404".trim()) {
             var parser = new DOMParser();
             var doc = parser.parseFromString(xhr.responseText, "text/html");
-            var chapters = Array.from(doc.querySelectorAll('#chapter-list > li > a'));
+            var chapters = Array.from(doc.querySelectorAll('#chapter-list > li > a')).reverse();
             // if (Number(novelCh) > chapters.length || Number(novelCh) < 1) {
                 // window.location.href = `${window.location.href.split('?')[0]}?id=${novelId}&ch=1`;
             // }
